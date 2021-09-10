@@ -79,11 +79,11 @@ app_license = "MIT"
 # ---------------
 # Hook on document methods and events
 
-doc_events = {
-	"Sales Invoice": {
-		"after_insert": "fbr_invoice.events.sales_invoice.send_pos_invoice_fbr",
-	}
-}
+# doc_events = {
+# 	"Sales Invoice": {
+# 		"after_insert": "fbr_invoice.events.sales_invoice.send_pos_invoice_fbr",
+# 	}
+# }
 
 # Scheduled Tasks
 # ---------------
