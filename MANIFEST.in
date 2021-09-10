@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include fbr_invoice *.css
+recursive-include fbr_invoice *.csv
+recursive-include fbr_invoice *.html
+recursive-include fbr_invoice *.ico
+recursive-include fbr_invoice *.js
+recursive-include fbr_invoice *.json
+recursive-include fbr_invoice *.md
+recursive-include fbr_invoice *.png
+recursive-include fbr_invoice *.py
+recursive-include fbr_invoice *.svg
+recursive-include fbr_invoice *.txt
+recursive-exclude fbr_invoice *.pyc
