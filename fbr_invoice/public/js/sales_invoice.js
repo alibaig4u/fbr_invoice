@@ -16,7 +16,7 @@ frappe.ui.form.on("Sales Invoice", {
                     "ItemCode": item.item_code,
                     "ItemName": item.item_name,
                     "Quantity": item.qty,
-                    "PCTCode": "",
+                    "PCTCode": "11001010",
                     "TaxRate": 0,
                     "SaleValue": item.rate,
                     "TotalAmount": item.amount,
