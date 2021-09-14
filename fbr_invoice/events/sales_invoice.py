@@ -87,6 +87,10 @@ def send_pos_invoice_fbr(doc=None, handler=None):
         print(ex)
         return ex
 
+@frappe.whitelist()
+def set_invoice_number(doctype, name, inv):
+    frappe.db.set_value(doctype, name, "fbr_invoice_no", inv)
+    frappe.db.commit()
 
 @frappe.whitelist()
 def generate_fbr_barcode(code=None):
