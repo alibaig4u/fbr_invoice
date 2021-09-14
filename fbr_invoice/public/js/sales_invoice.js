@@ -55,7 +55,7 @@ frappe.ui.form.on("Sales Invoice", {
 
             $.ajax('http://127.0.0.1:8524/api/IMSFiscal/GetInvoiceNumberByModel', {
                 type: 'POST',  // http method
-                data: JSON.stringify(data),  // data to submit
+                data: data,  // data to submit
                 success: function (data, status, xhr) {
                     debugger;
                     console.log('status: ' + status + ', data: ' + JSON.stringify(data));
