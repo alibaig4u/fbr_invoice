@@ -26,7 +26,7 @@ fixtures = [
 
 # include js, css files in header of desk.html
 # app_include_css = "/assets/fbr_invoice/css/fbr_invoice.css"
-# app_include_js = "/assets/fbr_invoice/js/fbr_invoice.js"
+app_include_js = "/assets/fbr_invoice/js/qrcode.js"
 
 # include js, css files in header of web template
 # web_include_css = "/assets/fbr_invoice/css/fbr_invoice.css"
