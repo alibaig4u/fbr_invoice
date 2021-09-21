@@ -90,17 +90,17 @@ def send_pos_invoice_fbr(doc=None, handler=None):
 @frappe.whitelist()
 def set_invoice_number(doctype, name, inv):
     frappe.db.set_value(doctype, name, "fbr_invoice_no", inv)
-    generate_fbr_barcode(inv)
+    generate_fbr_barcode(inv, name)
     frappe.db.commit()
 
 @frappe.whitelist()
-def generate_fbr_barcode(code=None):
+def generate_fbr_barcode(code=None, docname=None):
     from pathlib import Path
     import os
     import qrcode
 
     try:
-        name_tobe = code + ".png"
+        name_tobe = docname + ".png"
         # Get the current working directory
         cwd = os.getcwd()
         print(cwd)
