@@ -90,44 +90,25 @@ def send_pos_invoice_fbr(doc=None, handler=None):
 @frappe.whitelist()
 def set_invoice_number(doctype, name, inv):
     frappe.db.set_value(doctype, name, "fbr_invoice_no", inv)
+    generate_fbr_barcode(inv)
     frappe.db.commit()
 
 @frappe.whitelist()
 def generate_fbr_barcode(code=None):
-    import shutil
-    import barcode
     from pathlib import Path
     import os
+    import qrcode
 
-    name_tobe = code + ".svg"
-    # Get the current working directory
-    cwd = os.getcwd()
-    print(cwd)
-    # f = open(cwd+"/sites/currentsite.txt", "r")
-    f = open(cwd+"/currentsite.txt", "r")
-    currentsitename = f.readline()
-    check_file = Path(cwd + "/" + currentsitename + "/public/files/barcodes/" + name_tobe)
-    # check_file = Path(cwd + "/sites/" + currentsitename + "/public/files/barcodes/" + name_tobe)
-    if not check_file.is_file():
-        bar = barcode.get('code128', str(code))
-        result = bar.save(code)
-        shutil.move(result, cwd + "/" + currentsitename + '/public/files/barcodes')
-        # shutil.move(result, cwd + "/sites/" + currentsitename + '/public/files/barcodes')
-
-    # import pyqrcode
-    # from base64 import b64encode, b32encode
-    # qrcode = pyqrcode.create(code)
-    # qrcode.svg(code+'.svg', scale=8)
-    #
-    # # url = qrcreate(code)
-    # # svg = ''
-    # stream = BytesIO()
-    # try:
-    #     qrcode.svg(stream, scale=4, background="#eee", module_color="#222")
-    #     svg = stream.getvalue().decode().replace('\n', '')
-    #     # svg = stream.getvalue().decode().replace('\n', '')
-    #     # svg = b64encode(svg.encode())
-    #     shutil.move(svg, cwd + "/sites/" + currentsitename + '/public/files/barcodes')
-    # finally:
-    #     stream.close()
-
+    try:
+        name_tobe = code + ".png"
+        # Get the current working directory
+        cwd = os.getcwd()
+        print(cwd)
+        f = open(cwd+"/currentsite.txt", "r")
+        currentsitename = f.readline()
+        check_file = Path(cwd + "/" + currentsitename + "/public/files/qrcodes/" + name_tobe)
+        if not check_file.is_file():
+            img = qrcode.make(code)
+            img.save(cwd + "/" + currentsitename + '/public/files/qrcodes/' + name_tobe)
+    except Exception as ex:
+        print(ex)
