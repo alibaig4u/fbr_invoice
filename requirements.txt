@@ -1,1 +1,2 @@
 frappe
+qrcode==7.3

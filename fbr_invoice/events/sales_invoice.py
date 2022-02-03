@@ -1,7 +1,3 @@
-#!/home/vatsky/frappe-bench/env/bin/python
-#####/Users/saqibrupani/Documents/pythoncode/SkylinesVAT/frappe-bench/env/bin/python
-from six import BytesIO
-
 import frappe
 from frappe import _
 import json
