@@ -15,8 +15,8 @@ fixtures = [
     {
         "dt": "Custom Field", "filters": [
             [
-                "name", "in", ["POS Profile-ntn_no", "Sales Invoice-ntn_no", "Sales Invoice-fbr_invoice_no",
-                               "Sales Invoice-pos_id", "POS Profile-pos_id"]
+                "name", "in", ["POS Profile-ntn_no", "POS Profile-pos_id", "POS Profile-fbr_pos_token",
+                               "POS Invoice-pos_id", "POS Invoice-ntn_no", "POS Invoice-fbr_invoice_no"]
             ]
         ]
     },
