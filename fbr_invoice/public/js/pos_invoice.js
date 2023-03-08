@@ -1,7 +1,6 @@
 //frappe.new_doc = false
 frappe.ui.form.on("POS Invoice", {
     refresh: function(frm){
-        debugger;
         if(frm.doc.docstatus == 1){
             if(is_null(frm.doc.fbr_invoice_no)){
                 frm.add_custom_button(__("Update FBR Invoice"), ()=>{
