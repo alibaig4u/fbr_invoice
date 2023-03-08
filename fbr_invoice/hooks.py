@@ -15,8 +15,8 @@ fixtures = [
     {
         "dt": "Custom Field", "filters": [
             [
-                "name", "in", ["POS Profile-ntn_no", "Sales Invoice-ntn_no", "Sales Invoice-fbr_invoice_no",
-                               "Sales Invoice-pos_id", "POS Profile-pos_id"]
+                "name", "in", ["POS Profile-ntn_no", "POS Profile-pos_id", "POS Profile-fbr_pos_token",
+                               "POS Invoice-pos_id", "POS Invoice-ntn_no", "POS Invoice-fbr_invoice_no", "POS Invoice-fbr_pos_token"]
             ]
         ]
     },
@@ -36,7 +36,7 @@ app_include_js = "/assets/fbr_invoice/js/qrcode.js"
 # page_js = {"page" : "public/js/file.js"}
 
 # include js in doctype views
-doctype_js = {"Sales Invoice" : "public/js/sales_invoice.js"}
+doctype_js = {"POS Invoice" : "public/js/pos_invoice.js"}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
